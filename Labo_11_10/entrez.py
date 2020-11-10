@@ -37,11 +37,11 @@ def main():
     # Message d'accueil
     print("""Bienvenu au programme de recherche de gène par mot-clé!""")
 
-    # Rechercher un gène par mot-clé
+    # Rechercher un gène par mot-clé; retourne une liste de geneId ex. [1212, 4335, 9884]
     IdList = rechercherGene()
 
     if len(IdList) != 0:
-        # Choix d'un gène parmi la liste des gènes retournés
+        # Choix d'un gène parmi la liste des gènes retournés; retourne l'index du geneId dans la liste
         index = choisirGene(IdList)
         # Téléchargement de la séquence nucléotidique de référence (RefSeq) du gène choisi
         telechargerSequence(IdList[index])
@@ -58,59 +58,58 @@ def main():
 def rechercherGene(): pass
     
     # Interroger l'utilisateur
-    #
-    #
-    #
+    organism, keyword = None, None
+    while not organism: organism = input("""Spécifiez un organisme: """).strip()  # <- J'ai ajouté le choix de l'organisme; c'est optionnel!
+    while not keyword : keyword  = input("""Spécifiez un mot-clé: """).strip()
 
     # ESearch - Recherche par mot-clé
-    #
-    #
-    #
-    #
+    """
+    VOTRE CODE ICI
+    """
 
     # Retourne la liste des identifiants des gènes
-    #
+    """
+    VOTRE CODE ICI
+    """
 
 
 def choisirGene(IdList): pass
 
     # ESummary - Obtention des informations sur les gènes de la liste
-    #
-    #
-    #
-    #
+    """
+    VOTRE CODE ICI
+    """
 
     # Afficher la liste des gènes (avec index et description)
-    #
+    for i in range(len(IdList)): print(i, summaries[i]['Description'], sep='. ')
     
     # Interroger l'utilisateur
-    #
-    #
-    #
-    #
+    choix = -1
+    while choix not in range(len(IdList)):
+        choix = input("""Choisissez un gène parmi la liste retournée: """)
+        if choix.isnumeric(): choix = int(choix)
 
     # Retourne l'index du gène choisi dans la liste des gènes
-    #
+    return choix
 
 
 
 def telechargerSequence(IdGene): pass
 
     # ELink - Obtention de la référence croisée
-    #
-    #
-    #
-    #
+    """
+    VOTRE CODE ICI
+    """
 
     # EFetch - Obtention de la séquence au format Fasta
-    #
-    #
-    #
+    """
+    VOTRE CODE ICI
+    """
 
     # Enregistrement du fichier Fasta
-    #
-    #
-    #
+    """
+    VOTRE CODE ICI
+    """
 
 
 ###########################################################################
